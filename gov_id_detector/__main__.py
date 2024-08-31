@@ -1,7 +1,5 @@
-# gov_id_detector/__main__.py
-
 import sys
-from .file_handler import extract_text
+from .file_handler import extract_text, extract_image_from_file
 from .detector import detect_ids
 
 def main():
@@ -10,10 +8,17 @@ def main():
         sys.exit(1)
 
     file_path = sys.argv[1]
+    templates = {
+        'Aadhar Card': 'templates/aadhar_template.jpg',
+        'Pan Card': 'templates/pan_template.jpg',
+        # Add more templates here
+    }
     
     try:
         text = extract_text(file_path)
-        detected_ids = detect_ids(text)
+        image_path = extract_image_from_file(file_path)  # Extract or provide the image for template matching
+        
+        detected_ids = detect_ids(text, image_path, templates)
         
         if detected_ids:
             print("Detected IDs:")
