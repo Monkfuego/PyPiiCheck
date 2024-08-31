@@ -18,10 +18,12 @@ def detect_ids(text):
     if critical_alerts:
         print("Critical Alerts Detected:")
         for id_type, matches in critical_alerts.items():
-            print(f"{id_type}: {matches}")
+            for match in matches:
+                print(f"{id_type}: {match[0]} found at position {match[1]} to {match[2]}")
     elif lesser_critical_alerts:
         print("\nLesser Critical Alerts Detected:")
         for id_type, matches in lesser_critical_alerts.items():
-            print(f"{id_type}: {matches}")
+            for match in matches:
+                print(f"{id_type}: {match[0]} found at position {match[1]} to {match[2]}")
     else:
         print("No Alerts Detected")
