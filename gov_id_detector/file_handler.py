@@ -1,4 +1,4 @@
-import fitz  # PyMuPDF for PDF handling
+import fitz 
 import PyPDF2
 import openpyxl
 import pytesseract
