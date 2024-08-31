@@ -3,6 +3,7 @@
 import PyPDF2
 import openpyxl
 import pytesseract
+import docx
 from PIL import Image
 
 def extract_text_from_pdf(file_path):
@@ -11,10 +12,10 @@ def extract_text_from_pdf(file_path):
         text = ''.join([page.extract_text() for page in reader.pages])
     return text
 
-#def extract_text_from_docx(file_path):
- #   doc = docx.Document(file_path)
-  #  text = '\n'.join([para.text for para in doc.paragraphs])
-   # return text
+def extract_text_from_docx(file_path):
+    doc = docx.Document(file_path)
+    text = '\n'.join([para.text for para in doc.paragraphs])
+    return text
 
 def extract_text_from_image(file_path):
     image = Image.open(file_path)
