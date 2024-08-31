@@ -10,7 +10,7 @@ def detect_ids(text):
         matches = pattern.findall(text)
         if matches:
             if id_type in ['Aadhar Card', 'Pan Card', 'Passport', 'DriverLicense', 'GSTIN', 
-                           'NREGA Job Card', 'IFSC', 'VoterId_India', 'NPS_PRAN', 'CreditCard', 'CVV']:
+                           'NREGA Job Card', 'IFSC', 'VoterId_India', 'NPS_PRAN', 'CreditCard']:
                 critical_alerts[id_type] = matches
             else:
                 lesser_critical_alerts[id_type] = matches
