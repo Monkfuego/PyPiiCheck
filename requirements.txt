@@ -1,4 +1,6 @@
+openpyxl
 PyPDF2
-pytesseract
 Pillow
-python-docx
+opencv-python==4.5.5.64
+pytesseract==0.3.8
+regex==2022.6.2
